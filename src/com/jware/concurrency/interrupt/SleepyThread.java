@@ -13,6 +13,11 @@ import java.util.logging.Logger;
  * @author Jon Ware <jonware01@gmail.com>
  */
 public class SleepyThread implements Runnable {
+    /**
+     * Basic runnable method to print a message and sleep.
+     *
+     * @see java.lang.Runnable#run()
+     */
     @Override
     public void run() {
         for(int i = 0; i < 10; i++) {

@@ -9,10 +9,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * This is the runner class for Concurrency Application examples. This will kick
+ * off a number of simple thread examples to show how sleeping threads can be
+ * interrupted, how interrupts should be handled, and how joins work.
+ * 
  * @author Jon Ware <jonware01@gmail.com>
  */
 public class InterruptApplication  {
+    /**
+     * Main method that kicks off the sleepy thread examples.
+     * 
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         /*
          * Thread interrupt
