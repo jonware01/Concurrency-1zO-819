@@ -9,7 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * This Thread is a simple runnable that prints a message and then sleeps.
+ * 
  * @author Jon Ware <jonware01@gmail.com>
  */
 public class SleepyThread implements Runnable {
