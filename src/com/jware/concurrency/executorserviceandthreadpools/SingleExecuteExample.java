@@ -22,24 +22,36 @@
  * SOFTWARE.
  */
 
-package com.jware.concurrency.runnableandcallable;
+package com.jware.concurrency.executorserviceandthreadpools;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
- * This is a simple object that implements the <code>Runnable</code> interface.
  *
  * @author Jon Ware <jonware01@gmail.com>
  */
-public class RunThread implements Runnable {
-
-    /**
-     * Basic method to print a message.
-     *
-     * @see java.lang.Runnable#run()
-     *
-     * @return A new <code>Object</code>
-     */
-    @Override
-    public void run() {
-        System.out.println("In runnable method.");
+public class SingleExecuteExample {
+    public static void main(String[] args) {
+        List<Callable<Integer>> callables = new ArrayList<>();
+        callables.add(() -> 1);
+        callables.add(() -> 2);
+        
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        
+        try {
+            Thread.sleep(100);
+            System.out.println(executorService.invokeAll(callables));
+        }
+        catch(InterruptedException e) {
+            
+        }
+        finally {
+            executorService.shutdown();
+        }
     }
 }
